@@ -108,10 +108,17 @@
 .slider__content {
   display: flex;
   height: 100%;
+  position: relative;
 }
 
 .slider__item {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
   padding-left: 208.22px;
+  box-sizing: border-box;
+  transition: ease-in-out 0.3s;
 }
 .slider__item h1 {
   font-size: 45px;
@@ -127,6 +134,9 @@
 }
 .slider__control img {
   max-width: 37%;
+}
+.slider__control:hover {
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .control__forward {

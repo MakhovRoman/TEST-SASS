@@ -124,11 +124,18 @@ $sliderGap: 100px;
 .slider__content {
   display: flex;
   height: 100%;
+  position: relative;
 }
 
 .slider__item {
   @extend %flex-center;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
   padding-left: calc(308.22px - $sliderGap);
+  box-sizing: border-box;
+  transition: ease-in-out 0.3s;
 
   & h1 {
     font-size: 45px;
@@ -146,6 +153,10 @@ $sliderGap: 100px;
 
   & img {
     max-width: 37px / $sliderGap * 100%;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.15);
   }
 }
 
