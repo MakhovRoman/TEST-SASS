@@ -2,12 +2,12 @@
   font-family: "Roboto", sans-serif;
   src: url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap");
 }
-.slider__item, .burger, .grid-block__item, .section__h2, .slider__control {
+.slider__item, .burger, .footer__content, .footer, .text-utp, .grid-block__item, .section__h2, .slider__control {
   display: flex;
   align-items: center;
 }
 
-.grid-block__item, .section__h2, .slider__control {
+.footer__content, .footer, .text-utp, .grid-block__item, .section__h2, .slider__control {
   justify-content: center;
 }
 
@@ -25,12 +25,38 @@
 }
 
 .header {
+  position: relative;
   height: 148px;
   display: flex;
   justify-content: space-between;
   background-color: rgb(180, 127, 246);
   padding-left: 13.2786324786%;
   padding-right: 4.7547008547%;
+}
+
+.header__modal {
+  width: 451px;
+  height: 500px;
+  box-sizing: border-box;
+  background: rgb(166, 201, 255);
+  border: 1px solid #00FF4A;
+  border-left: none;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 33px 64.5px;
+  display: flex;
+  flex-direction: column;
+  transition: ease-in-out 0.3s;
+}
+
+.header__modal_hidden {
+  transform: translateY(-100%);
+}
+
+.modal__link + .modal__link {
+  margin-top: 39px;
 }
 
 .header__links {
@@ -159,6 +185,7 @@
 }
 
 .grid-block {
+  width: 100%;
   height: fit-content;
   display: flex;
   gap: 13px;
@@ -187,6 +214,47 @@
 
 .i4 {
   width: 13.8461538462%;
+}
+
+.inline {
+  width: 95.7264957265%;
+  box-sizing: border-box;
+  height: 248px;
+  background-color: yellow;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 30px;
+}
+
+.inline__item {
+  width: 19.1452991453%;
+  background: #497957;
+  border: 2px solid #00FF4A;
+  border-radius: 35px;
+}
+.inline__item:hover {
+  box-shadow: 2px 5px 10px #497957;
+}
+
+.text-utp {
+  height: 192px;
+}
+
+.footer {
+  height: 100px;
+  background: rgb(216, 127, 246);
+}
+
+.footer__link + .footer__link {
+  margin-left: 175px;
+}
+
+@media (max-width: 1169px) {
+  .grid-block {
+    gap: 1.1111111111vw;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

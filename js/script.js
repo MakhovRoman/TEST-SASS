@@ -2,7 +2,11 @@
 
 const burger = document.querySelector('.burger');
 const burgerButton = burger.querySelector('.burger__button');
-burger.addEventListener('click', (e) => burgerButton.classList.toggle('burger__button_active'));
+const headerModal = document.querySelector('.header__modal');
+burger.addEventListener('click', (e) => {
+  burgerButton.classList.toggle('burger__button_active');
+  headerModal.classList.toggle('header__modal_hidden');
+});
 
 function makeSlider() {
   let slider = document.querySelector('.slider__content');
