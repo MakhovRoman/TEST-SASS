@@ -11,10 +11,13 @@
   <div class="page-wrapper">
     <header class="header">
       <div class="header__modal header__modal_hidden">
-        <a href="#" class="link modal__link">Text</a>
-        <a href="#" class="link modal__link">Text</a>
-        <a href="#" class="link modal__link">Text</a>
-        <a href="#" class="link modal__link">Text</a>
+        <div class="modal__container">
+          <a href="#" class="link modal__link">Text</a>
+          <a href="#" class="link modal__link">Text</a>
+          <a href="#" class="link modal__link">Text</a>
+          <a href="#" class="link modal__link">Text</a>
+        </div>
+        <label for="popup" class="link popup__link">Open pop-up button</label>
       </div>
       <div class="header__links">
         <a href="#" class="link header__links-item">Text</a>
@@ -31,12 +34,15 @@
           <div class="slider__content">
             <div class="slider__item">
               <h1>H1 text</h1>
+              <label for="popup" class="link popup__link">Open pop-up button</label>
             </div>
             <div class="slider__item">
               <h1>H2 text</h1>
+              <label for="popup" class="link popup__link">Open pop-up button</label>
             </div>
             <div class="slider__item">
               <h1>H3 text</h1>
+              <label for="popup" class="link popup__link">Open pop-up button</label>
             </div>
           </div>
         </div>
@@ -69,6 +75,7 @@
       <section class="text-utp">
         <div class="text-utp__content">
           <h2>Text utp</h2>
+          <label for="popup" class="link popup__link">Open pop-up button</label>
         </div>
       </section>
     </main>
@@ -80,7 +87,16 @@
         <a class="link footer__link" href="#">Text</a>
       </div>
     </footer>
-    <div class="pop-up"></div>
+    <div class="popup-wrapper">
+      <input type="checkbox" id="popup" class="popup__state" />
+      <div class="popup">
+        <label for="popup" class="popup__bg"></label>
+        <div class="popup__content">
+          <label for="popup" class="popup__close">X</label>
+          Pop-up
+        </div>
+      </div>
+    </div>
   </div>
   <script src="js/script.js"></script>
 </body>

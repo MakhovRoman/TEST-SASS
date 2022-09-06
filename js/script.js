@@ -3,18 +3,32 @@
 const burger = document.querySelector('.burger');
 const burgerButton = burger.querySelector('.burger__button');
 const headerModal = document.querySelector('.header__modal');
+const popupLinkList = Array.from(document.querySelectorAll('.popup__link'));
+
 burger.addEventListener('click', (e) => {
   burgerButton.classList.toggle('burger__button_active');
   headerModal.classList.toggle('header__modal_hidden');
 });
+popupLinkList.forEach(link => link.addEventListener('click', () => {
+  if (burgerButton.classList.contains('burger__button_active')) {
+    burgerButton.classList.remove('burger__button_active');
+    headerModal.classList.add('header__modal_hidden');
+  }
+}));
 
-function makeSlider() {
-  let slider = document.querySelector('.slider__content');
-  let sliderItems = Array.from(slider.children);
+window.addEventListener('click', e => {
+  let link = headerModal.querySelector('.popup__link');
+  let target = e.target;
+  let isMenu = target == burgerButton || headerModal.contains(target);
+  let isBurger = target == burger;
+  let isActive = headerModal.classList.contains('header__modal_hidden');
 
-  slider.style.width = `${100 * sliderItems.length}%`;
-  sliderItems.forEach((item, index, arr) => item.style.width = `${parseInt(getComputedStyle(slider).width) / arr.length}px`);
-}
+  if(!isMenu && !isBurger && !isActive) {
+    burgerButton.classList.toggle('burger__button_active');
+    headerModal.classList.toggle('header__modal_hidden');
+  }
+})
+
 
 class Slider {
   constructor(title) {
@@ -83,7 +97,6 @@ class Slider {
   buttonsAddEventListener() {
     this.buttons.forEach(item => item.addEventListener('click', e => {
       if(e.target.classList.contains('control__forward') || e.target.classList.contains('forward__img')) {
-        console.log(e.target);
         this.countForward();
       } else if(e.target.classList.contains('control__backward') || e.target.classList.contains('backward__img')) {
         this.countBackward();
@@ -99,5 +112,7 @@ sliderTop.setSliderWidth();
 sliderTop.setSliderInLine();
 sliderTop.makeSliderObjArray();
 sliderTop.buttonsAddEventListener();
+window.addEventListener('resize', sliderTop.setSliderWidth.bind(sliderTop));
 
-//makeSlider();
+
+console.log(getComputedStyle(document.querySelector('.inline__item')).borderRadius);
