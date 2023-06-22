@@ -13,4 +13,4 @@
 
 ## STACK
 
-![My Skills](https://skillicons.dev/icons?i=html,css,sass)
+![My Skills](https://skillicons.dev/icons?i=html,css,sass,js)
